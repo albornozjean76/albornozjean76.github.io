@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarotista Oráculo</title>
+  <style>
+    :root{
+      --bg:#0c0c0e;
+      --panel:#151518;
+      --panel2:#1c1c21;
+      --text:#f4f1eb;
+      --muted:#a8a39b;
+      --accent:#c2a56a;
+      --accent2:#8b6d3d;
+      --line:rgba(255,255,255,.08);
+      --radius:20px;
+      --shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(194,165,106,.12), transparent 28%),
+        linear-gradient(180deg, #111115 0%, var(--bg) 40%, #09090b 100%);
+      color:var(--text);
+    }
+
+    .wrap{
+      max-width:460px;
+      margin:0 auto;
+      min-height:100vh;
+      padding:18px 16px 26px;
+    }
+
+    .topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:#fff;
+      font-size:18px;
+      opacity:.9;
+      margin-bottom:12px;
+    }
+
+    .profile{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-top:4px;
+    }
+
+    .avatar{
+      width:84px;
+      height:84px;
+      border-radius:50%;
+      padding:3px;
+      background:linear-gradient(135deg,var(--accent),#ead9b4);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .avatar-inner{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      background:linear-gradient(180deg,#1a1a1d,#0f0f12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      color:var(--accent);
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .avatar-inner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    h1{
+      margin:0;
+      font-size:24px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+
+    .handle{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .bio{
+      margin-top:14px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+      line-height:1.55;
+      color:#ece6dc;
+    }
+
+    .bio p{
+      margin:0 0 8px;
+    }
+
+    .bio p:last-child{
+      margin-bottom:0;
+    }
+
+    .section{
+      margin-top:18px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      margin-top:12px;
+      padding:15px 16px;
+      border-radius:16px;
+      text-decoration:none;
+      text-align:center;
+      font-weight:700;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(194,165,106,.4);
+    }
+
+    .btn.primary{
+      background:linear-gradient(180deg,var(--accent),var(--accent2));
+      color:#120f08;
+      border:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .card{
+      min-height:118px;
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:15px;
+      letter-spacing:-.01em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    .tagrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:#e8dfcf;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+
+    .note{
+      margin-top:16px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(194,165,106,.10);
+      border:1px dashed rgba(194,165,106,.32);
+      color:#eadfca;
+      font-size:13px;
+      line-height:1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topline"><span>⋯</span><span>⌁</span></div>
+
+    <section class="profile">
+      <div class="avatar">
+        <div class="avatar-inner">
+          <!-- Cambia esto por tu foto -->
+          ✦
+        </div>
+      </div>
+
+      <div>
+        <h1>Tarotista Oráculo</h1>
+        <div class="handle">@tarotista_oraculo</div>
+        <div class="tagrow">
+          <span class="tag">Tarot</span>
+          <span class="tag">Oráculo</span>
+          <span class="tag">Runas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio">
+      <p>Lecturas de tarot y oráculo con enfoque claro y directo.</p>
+      <p>Consultas para amor, trabajo, dinero y decisiones importantes.</p>
+      <p>Atención por WhatsApp y mensaje directo.</p>
+    </section>
+
+    <div class="section">Contacto</div>
+    <a class="btn primary" href="https://wa.me/0000000000" target="_blank">Reservar por WhatsApp</a>
+    <a class="btn" href="#">Enviar DM en Instagram</a>
+    <a class="btn" href="#">Ver servicios y precios</a>
+    <a class="btn" href="#">Agendar cita</a>
+
+    <div class="section">Servicios</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Lectura de amor</h3>
+        <p>Relaciones, compatibilidad, ex parejas y decisiones afectivas.</p>
+      </div>
+      <div class="card">
+        <h3>Lectura general</h3>
+        <p>Energía actual, bloqueos y próximas oportunidades.</p>
+      </div>
+      <div class="card">
+        <h3>Trabajo y dinero</h3>
+        <p>Empleo, negocios, estabilidad y crecimiento.</p>
+      </div>
+      <div class="card">
+        <h3>Limpieza energética</h3>
+        <p>Renovación y descarga de energía pesada.</p>
+      </div>
+    </div>
+
+    <div class="section">Redes</div>
+    <a class="btn" href="#" target="_blank">TikTok</a>
+    <a class="btn" href="#" target="_blank">YouTube</a>
+    <a class="btn" href="#" target="_blank">Facebook</a>
+
+    <div class="note">
+      Puedes cambiar colores, textos, enlaces y foto sin alterar la estructura.
+    </div>
+
+    <div class="footer">
+      Página editable en un solo archivo · Ideal para subir a Netlify, Vercel o GitHub Pages
+    </div>
+  </main>
+</body>
+</html>
